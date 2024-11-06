@@ -13,14 +13,16 @@ namespace CS_Form
     class TestButton : Button
 
     {
-        private int v;
+        Form1 _form1;
 
         /// <summary>
         /// コンストラクタ
         /// クラスを生成したときに呼び出される
         /// </summary>
-        public TestButton(int id, int x, int y, int width, int height)
+        public TestButton(Form1 form1, int id, int x, int y, int width, int height)
         {
+
+            _form1 = form1;
             // ClickイベントにOnClick関数を登録
             // ボタンをクリックした時に登録した関数を実行します。
             Click += OnClick;
@@ -39,7 +41,8 @@ namespace CS_Form
         /// <param name="s"></param>
         public void OnClick(object sender, EventArgs s)
         {
-            MessageBox.Show("2143");
+            _form1.LabelTextUpdate("ja");
+
         }
     }
 }
