@@ -35,6 +35,10 @@ namespace CS_Form
          "むらさき",
          "きみどり",
         };
+            {
+                _testTextBox = new TestTextBox("テキストボックスです  ", 10, 400, 500, 100);
+                Controls.Add(_testTextBox);
+            }
 
             for (int i = 0; i < 10; i++)
             {
@@ -42,15 +46,20 @@ namespace CS_Form
 
                 Controls.Add(testButton);
 
-                _testTextBox = new TestTextBox("テキストボックスです",10,400,500,100);
-                Controls.Add(_testTextBox);
             }
             _testLabel = new TestLabel("ラベルデス", 10, 300, 100, 500);
             Controls.Add(_testLabel);
         }
-        public void LabelTextUpdate(string str)
+        public void TestButton_Click(TestButton clickedButton)
         {
-            _testLabel.TextUpdate(str);
+            // 現在のテキストボックスの内容を保存
+            string textBoxText = _testTextBox.Text;
+
+            // ボタンのテキストをテキストボックスに設定
+            _testTextBox.Text = clickedButton.Text;
+
+            // テキストボックスの元の内容をボタンに設定
+            clickedButton.Text = textBoxText;
         }
     }
 }

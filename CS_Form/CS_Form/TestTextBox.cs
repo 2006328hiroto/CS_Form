@@ -10,9 +10,9 @@ namespace CS_Form
 {
     class TestTextBox : TextBox
     {
-        public TestTextBox(string str, int x, int y, int width, int height)
+        public TestTextBox(string text, int x, int y, int width, int height)
         {
-            Text = str;
+            Text = text;
 
             Location = new Point(x, y);
 

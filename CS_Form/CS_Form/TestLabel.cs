@@ -21,9 +21,9 @@ namespace CS_Form
             Size = new Size(width, height);
         }
         
-        public void TextUpdate(string str)
+        public void TextUpdate(string newText)
         {
-            Text = str;
+            Text = newText;
         }
 
     }
